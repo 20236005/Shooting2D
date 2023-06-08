@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerContller : MonoBehaviour
 {
     public GameObject Shot;
-    float speed = 1.0f;
+    float speed = 5.0f;
     
     GameObject player;
 
