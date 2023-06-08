@@ -8,17 +8,14 @@ public class PlayerContller : MonoBehaviour
     public GameObject Shot;
     float speed = 1.0f;
     
-    GameObject cher;
-
-    float xLimit = 32.0f;
-    float yLimit = 13.0f;
+    GameObject player;
 
     Animator anim;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        this.cher = GameObject.Find("MyChar");
+        this.player = GameObject.Find("MyChar");
         Application.targetFrameRate = 300;
     }
 
@@ -32,38 +29,24 @@ public class PlayerContller : MonoBehaviour
         transform.position += dir.normalized * speed * Time.deltaTime;
         //移動制限
         Vector3 creentPos = transform.position;
-        creentPos.x = Mathf.Clamp(creentPos.x, -xLimit, xLimit);
-        creentPos.y = Mathf.Clamp(creentPos.y, -yLimit, yLimit);
+        creentPos.x = Mathf.Clamp(creentPos.x, -9, 9);
+        creentPos.y = Mathf.Clamp(creentPos.y, -5, 5);
         transform.position = creentPos;
 
         //アニメーション
         float y = Input.GetAxisRaw("Vertical");
 
-        if (y == 0)
+        if (dir.y == 0)
         {
             anim.Play("Player");
         }
-        else if (y == 1)
+        else if (dir.y == 1)
         {
             anim.Play("PlayerL");
         }
-        else
+        else if (dir.y == -1)
         {
             anim.Play("PlayerR");
         }
-
-        // プレイヤーの位置
-        Vector3 PlayerPos = this.cher.transform.position;
-        transform.position = new Vector3(PlayerPos.x, PlayerPos.y, 0);
-
-        //クリックしたらShotを打つ
-        if (Input.GetButtonDown("Fire1"))
-        {
-            GameObject go = Instantiate(Shot);
-            go.transform.position = new Vector3(PlayerPos.x, PlayerPos.y, 0);
-        }
-
-        anim.speed = speed / 2.0f;
-
     }
 }
