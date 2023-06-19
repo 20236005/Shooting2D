@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Enemy
   - Shot
+  - BItem
+  - shot
+  - GItem
+  - RItem
+  - EShot
   layers:
   - Default
   - TransparentFX
