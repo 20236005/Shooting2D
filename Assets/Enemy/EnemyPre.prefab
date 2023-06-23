@@ -158,6 +158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemyshot: {fileID: 1885207635560855338, guid: b1460192652bf024999ca48607a91b50, type: 3}
   ExploPre: {fileID: 4135269354004558863, guid: 691783d8ba8412f47998f95959acef6e, type: 3}
+  BItem: {fileID: 2587283720213955156, guid: 88ee279cef406934a8a0924197a92ebe, type: 3}
+  GItem: {fileID: 7485406556261511389, guid: 1c44954bd10a56040a6b2e9668223a74, type: 3}
+  RItem: {fileID: 4623462877006825849, guid: edf6cc4e983cc0c4fb3d5b83a619e32d, type: 3}
 --- !u!50 &-1908653866216730857
 Rigidbody2D:
   serializedVersion: 4

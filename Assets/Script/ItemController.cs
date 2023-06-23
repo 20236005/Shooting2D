@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ItemController : MonoBehaviour
 {
-    float speed = 3.0f;
+    //float speed = 3.0f;
 
-    Vector3 dir = Vector3.zero;
+    //Vector3 dir = Vector3.zero;
 
     void Start()
     {
@@ -17,10 +17,10 @@ public class ItemController : MonoBehaviour
     {
 
         // ˆÚ“®•ûŒü‚ğŒˆ’è
-        dir = Vector3.down;
+       // dir = Vector3.down;
 
         // Œ»İ’n‚ÉˆÚ“®—Ê‚ğ‰ÁZ
-        transform.position += dir.normalized * speed * Time.deltaTime;
+       // transform.position += dir.normalized * speed * Time.deltaTime;
     }
 
     //“–‚½‚è”»’è

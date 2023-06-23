@@ -57,9 +57,9 @@ public class PlayerContller : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if(power >5)
+        if(power >3)
         {
-            power = 5;
+            power = 3;
         }
 
         if (Input.GetKeyDown(KeyCode.C))
@@ -84,16 +84,16 @@ public class PlayerContller : MonoBehaviour
         {
             if (other.gameObject.tag == "GItem")
             {
-                this.speed += 5.0f;
+                 GameObject dir = GameObject.Find("GameDirector");
+                 dir.GetComponent<GameDirector>().DecreaseTime5();
             }
             if (other.gameObject.tag == "BItem")
             {
-                this.speed = 3.0f;
-                this.power = 0;
+                 this.speed += 3.0f;
             }
             if (other.gameObject.tag == "RItem")
             {
-            this.power = (power + 1) % 13;
+                 this.power = (power + 1) % 13;
             }
         }   
 }

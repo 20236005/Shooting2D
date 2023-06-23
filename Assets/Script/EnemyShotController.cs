@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
-    float speed = 2.5f;
+    float speed = 1.5f;
     Vector3 dir =  Vector3.zero;
 
     void Start()
@@ -32,7 +32,6 @@ public class EnemyShot : MonoBehaviour
         }
 
         transform.position += dir * speed *Time.deltaTime;
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -40,7 +39,7 @@ public class EnemyShot : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameObject dir = GameObject.Find("GameDirector");
-            dir.GetComponent<GameDirector>().DecreaseTime2();
+            dir.GetComponent<GameDirector>().DecreaseTime4();
             Destroy(gameObject);
         }
     }
